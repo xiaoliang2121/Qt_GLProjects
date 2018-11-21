@@ -13,3 +13,5 @@ HEADERS += \
 SOURCES += \
     glwindow.cpp \
     main.cpp
+
+LIBS += -L/usr/local/lib -lGLU

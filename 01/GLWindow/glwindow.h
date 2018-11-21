@@ -2,12 +2,9 @@
 #define GLWINDOW_H
 
 #include <QOpenGLWindow>
-//#include <QOpenGLExtraFunctions>
-//#include <QOpenGLFunctions>
-#include <QOpenGLFunctions_3_3_Core>
-//#include <QtGui>
+#include <QOpenGLFunctions>
 
-class GLWindow : public QOpenGLWindow, protected QOpenGLFunctions_3_3_Core
+class GLWindow : public QOpenGLWindow, protected QOpenGLFunctions
 {
     Q_OBJECT
 
@@ -18,6 +15,9 @@ public:
     void initializeGL();
     void resizeGL(int width, int height);
     void paintGL();
+
+protected:
+    virtual void keyPressEvent(QKeyEvent *ev);
 };
 
 #endif // GLWINDOW_H
